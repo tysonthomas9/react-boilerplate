@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="177px" viewBox="0 0 256 177" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+    <g>
+        <polygon fill="#CD0423" points="128.0007 -0.0004 190.6627 176.2066 255.9997 176.2066" class="path-4"></polygon>
+        <polygon fill="#FF0090" points="127.9998 -0.0004 126.8068 176.2066 191.9998 176.2066" class="path-3"></polygon>
+        <polygon fill="#764ABC" points="127.9998 -0.0004 62.4698 176.2066 127.9998 176.2066" class="path-2"></polygon>
+        <polygon fill="#00D8FF" points="-0.0002 176.2066 63.9998 176.2066 127.9998 -0.0004" class="path-1"></polygon>
+    </g>
+</svg>
