@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SVG from 'react-inlinesvg';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import Button from 'material-ui/Button';
+import IconButton from 'material-ui/IconButton';
+import MenuIcon from 'material-ui-icons/Menu';
 
-import config from 'config';
-
-import Logo from 'components/Logo';
 import styles from './styles.css';
 
 export class Home extends React.PureComponent {
@@ -15,10 +17,18 @@ export class Home extends React.PureComponent {
 
   render() {
     return (
-      <div key="Home" className="app__home app__route">
-        <div className={styles.home}>
-          Test
-        </div>
+      <div>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton color="contrast" aria-label="Menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography type="title" color="inherit" className={styles.title}>
+              IOT
+            </Typography>
+            <Button color="contrast">Login</Button>
+          </Toolbar>
+        </AppBar>
       </div>
     );
   }

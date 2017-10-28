@@ -16,6 +16,10 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import SystemNotifications from 'components/SystemNotifications';
 
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+
+const theme = createMuiTheme();
+
 export class App extends React.Component {
   static propTypes = {
     app: PropTypes.object.isRequired,
@@ -28,32 +32,34 @@ export class App extends React.Component {
     const { app, dispatch, router, user } = this.props;
     let html = (<Loader />);
 
+      // <Header dispatch={dispatch} user={user} />
+      // <Footer />
     if (app.rehydrated) {
       html = (
         <Router dispatch={dispatch} router={router}>
-          <div key="app" className="app">
-            <Header dispatch={dispatch} user={user} />
-            <main className="app__main">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <RedirectPublic
-                  component={Login}
-                  isAuthenticated={user.isAuthenticated}
-                  path="/login"
-                  exact
-                />
-                <RedirectProtected
-                  component={Private}
-                  isAuthenticated={user.isAuthenticated}
-                  path="/private"
-                  exact
-                />
-                <Route component={NotFound} />
-              </Switch>
-            </main>
-            <Footer />
-            <SystemNotifications dispatch={dispatch} app={app} />
-          </div>
+          <MuiThemeProvider theme={theme}>
+            <div key="app" className="app">
+              <main className="app__main">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <RedirectPublic
+                    component={Login}
+                    isAuthenticated={user.isAuthenticated}
+                    path="/login"
+                    exact
+                  />
+                  <RedirectProtected
+                    component={Private}
+                    isAuthenticated={user.isAuthenticated}
+                    path="/private"
+                    exact
+                  />
+                  <Route component={NotFound} />
+                </Switch>
+              </main>
+              <SystemNotifications dispatch={dispatch} app={app} />
+            </div>
+          </MuiThemeProvider>
         </Router>
       );
     }
