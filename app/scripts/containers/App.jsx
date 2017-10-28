@@ -7,13 +7,10 @@ import RedirectPublic from 'modules/RedirectPublic';
 import RedirectProtected from 'modules/RedirectProtected';
 
 import Home from 'containers/Home';
-import Private from 'containers/Private';
 import Login from 'containers/Login';
 import NotFound from 'containers/NotFound';
 
 import Loader from 'components/Loader';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
 import SystemNotifications from 'components/SystemNotifications';
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
@@ -32,8 +29,6 @@ export class App extends React.Component {
     const { app, dispatch, router, user } = this.props;
     let html = (<Loader />);
 
-      // <Header dispatch={dispatch} user={user} />
-      // <Footer />
     if (app.rehydrated) {
       html = (
         <Router dispatch={dispatch} router={router}>
@@ -41,7 +36,6 @@ export class App extends React.Component {
             <div key="app" className="app">
               <main className="app__main">
                 <Switch>
-                  <Route exact path="/" component={Home} />
                   <RedirectPublic
                     component={Login}
                     isAuthenticated={user.isAuthenticated}
@@ -49,10 +43,9 @@ export class App extends React.Component {
                     exact
                   />
                   <RedirectProtected
-                    component={Private}
+                    component={Home}
                     isAuthenticated={user.isAuthenticated}
-                    path="/private"
-                    exact
+                    path="/"
                   />
                   <Route component={NotFound} />
                 </Switch>

@@ -8,6 +8,9 @@ import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 
+import { Switch, Route } from 'react-router-dom';
+import NotFound from 'containers/NotFound';
+import Private from 'containers/Private';
 import styles from './styles.css';
 
 export class Home extends React.PureComponent {
@@ -26,9 +29,15 @@ export class Home extends React.PureComponent {
             <Typography type="title" color="inherit" className={styles.title}>
               IOT
             </Typography>
-            <Button color="contrast">Login</Button>
+            <Button color="contrast">Log Out</Button>
           </Toolbar>
         </AppBar>
+        <div>
+          <Switch>
+            <Route path="/dashboard" component={Private} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
       </div>
     );
   }

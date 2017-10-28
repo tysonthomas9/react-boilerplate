@@ -7,7 +7,7 @@ const RedirectPublic = ({ component: Component, isAuthenticated, ...rest }) => (
     {...rest}
     render={props => (
       isAuthenticated ?
-      (<Redirect to="/private" />) :
+      (<Redirect to="/dashboard" />) :
       (<Component {...props} />)
     )}
   />
