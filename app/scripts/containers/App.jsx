@@ -14,6 +14,7 @@ import Loader from 'components/Loader';
 import SystemNotifications from 'components/SystemNotifications';
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import styles from './styles.css';
 
 const theme = createMuiTheme();
 
