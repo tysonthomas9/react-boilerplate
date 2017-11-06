@@ -20,6 +20,11 @@ import Divider from 'material-ui/Divider';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from 'containers/NotFound';
 import Private from 'containers/Private';
+import ManageAccountPage from '../containers/ManageAccountPage/index';
+import DevicesPage from '../containers/DevicesPage/index';
+import SignUpPage from '../containers/SignUpPage/index';
+import EditAccountPage from '../containers/EditAccountPage/index';
+
 
 const drawerWidth = 240;
 
@@ -202,6 +207,10 @@ class Home extends React.Component {
           <main className={classes.content}>
             <Switch>
               <Route path="/dashboard" component={Private} />
+              <Route path="/manage-account" component={ManageAccountPage} />
+              <Route path="/devices" component={DevicesPage} />
+              <Route path="/signup" component={SignUpPage} />
+              <Route path="/edit-account" component={EditAccountPage} />
               <Route component={NotFound} />
             </Switch>
           </main>

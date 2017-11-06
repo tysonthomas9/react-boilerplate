@@ -38,6 +38,7 @@
     "react-inlinesvg": "^0.6",
     "react-redux": "^5.0",
     "react-router-dom": "^4.1",
+    "react-swipeable-views": "^0.12.9",
     "redux": "^3.6",
     "redux-observable": "^0.14",
     "redux-persist": "^4.8",
