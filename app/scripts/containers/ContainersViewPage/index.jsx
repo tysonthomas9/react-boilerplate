@@ -7,21 +7,21 @@ import { ActionTypes } from 'constants/index';
 import { fetchPopularRepos } from 'actions';
 
 import Loader from 'components/Loader';
-import Devices from '../../components/Devices/index';
+import ContainersView from '../../components/ContainersView/index';
 
-export class DevicesPage extends React.PureComponent {
+export class ContainersViewPage extends React.PureComponent {
   render() {
     return (
-      <div key="DevicesPage">
+      <div key="ContainersViewPage">
         <div>
-          <h2>DevicesPage</h2>
+          <h2>Containers View</h2>
         </div>
         <div>
-          <Devices />
+          <ContainersView />
         </div>
       </div>
     );
   }
 }
 
-export default connect()(DevicesPage);
+export default connect()(ContainersViewPage);

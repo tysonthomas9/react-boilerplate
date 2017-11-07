@@ -55,7 +55,7 @@ class Devices extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root} style={{ width: 1360 }}>
+      <div className={classes.root} style={{ width: 400 }}>
         <AppBar position="relative" color="default">
           <Tabs
             value={this.state.value}

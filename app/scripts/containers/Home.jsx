@@ -24,6 +24,7 @@ import ManageAccountPage from '../containers/ManageAccountPage/index';
 import DevicesPage from '../containers/DevicesPage/index';
 import SignUpPage from '../containers/SignUpPage/index';
 import EditAccountPage from '../containers/EditAccountPage/index';
+import ContainersViewPage from '../containers/ContainersViewPage/index';
 
 
 const drawerWidth = 240;
@@ -211,6 +212,8 @@ class Home extends React.Component {
               <Route path="/devices" component={DevicesPage} />
               <Route path="/signup" component={SignUpPage} />
               <Route path="/edit-account" component={EditAccountPage} />
+              <Route path="/Containers-View" component={ContainersViewPage} />
+
               <Route component={NotFound} />
             </Switch>
           </main>
